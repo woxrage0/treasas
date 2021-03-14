@@ -1,0 +1,322 @@
+<%- include('ek/header', {bot, user, path}) %>
+<script type="text/javascript">
+document.getElementById("anasayfa").classList.add('active');
+</script>
+
+
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+<script language="javascript">
+    document.onmousedown=disableclick;
+    status="Right Click Disabled";
+    Function disableclick(event)
+    {
+      if(event.button==2)
+       {
+         alert(status);
+         return false;    
+       }
+    }
+</script>
+
+<body oncontextmenu="return false">
+</body>
+    
+</div>
+
+
+<% include ./ek/footer %>
+
+
+<div class="container">
+ 
+  <div align="center">
+    <input type="search" placeholder="Bot ara..." id="ara" name="ara">
+    <br>
+    <select id="etiketselect">
+      <option disabled selected>Bir etiket seçiniz.</option>
+      <option value="noneFilter">Filtre kapat</option>
+      <option value="Moderasyon">Moderasyon</option>
+      <option value="Müzik">Müzik</option>
+      <option value="Ayarlar">Ayarlar</option>
+      <option value="Eğlence">Eğlence</option>
+      <option value="Web Panel">Web Panel</option>
+    </select>
+
+    
+     <style>
+    .botdurum{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      display:inline-block;
+    }
+    
+    .dnd{
+      background:#f44336;
+    }
+        .online{
+      background:#4CAF50;
+    }
+        .idle{
+      background:#FF9800;
+    }
+        .offline{
+      background:#616161;
+    }
+  </style>
+  
+    
+    
+    
+    
+    <p style="color:#fff;user-select:none;">
+      <a style="color:red">Not:</a> Botları bot adını, kütüphanesini, kısa açıklamasını, sahip adını ve etiketlerini yazarak aratabilirsiniz.<br>Botların etiketlerini seçerekte etiket üzerinden bot aratabilirsiniz. 
+    </p>
+    
+  </div>
+   <h5 style="color:#fff;user-select:none;">Sertifikalı Botlar</h5>
+  
+  <div class="cards">
+    <% if (bot.ayar.has('botlar')) { %>
+  <% const sorted = Object.keys(bot.ayar.fetch('botlar')).sort((a, b) => { return (bot.ayar.fetch(`botlar.${b}.oy`) || 0) - (bot.ayar.fetch(`botlar.${a}.oy`) || 0) }) %>
+  <% const top = sorted.splice(0, Object.keys(bot.ayar.fetch('botlar')).length) %>
+  <% const map = top.map(x=>x) %>
+	<% for(var i = 0; i < Object.keys(bot.ayar.fetch('botlar')).length; i++) { %>
+  <% let idd = map[i] %>
+   <% if(bot.ayar.has(`botlar.${idd}.durum`) === true) { %>
+    <% if (bot.ayar.fetch(`botlar.${idd}.durum`) === "Onaylı") { %>
+      <% if (bot.ayar.has(`botlar.${idd}.sertifika`) === true) { %>
+        <div class="card" style="width: 500px;margin-right: 10px;margin-bottom: 8px;">
+    <div class="row no-gutters">
+        <div class="col-md-5">
+        <img data-toggle="tooltip" data-placement="bottom"  title="<%=bot.useful.seg(bot.ayar.fetch(`botlar.${idd}.isim`), 5)%>" src="<%=bot.ayar.fetch(`botlar.${idd}.avatar`)%>" class="card-img-top h-100" style="border-radius: 50%;width: 180px;height: 180px !important;margin: 14px" alt="..." onerror="this.onerror=null;this.src='https://cdn.discordapp.com/attachments/415626207607128076/526891779992322078/sunucuicon.png'">
+        </div>
+        <div class="col-md-7">
+            <div class="card-body">
+        <h5 class="card-title"><%=bot.useful.seg(bot.ayar.fetch(`botlar.${idd}.isim`), 5)%></h5>
+        <h6 style="user-select:none;">Kütüphane: <%=bot.ayar.fetch(`botlar.${idd}.kutuphane`)%>| <span class="badge badge-secondary">OY: <%=bot.ayar.fetch(`botlar.${idd}.oy`)||0%></span></h6>
+        <p class="card-text"><%=bot.ayar.fetch(`botlar.${idd}.kisaaciklama`)%></p>
+        <p class="card-text"><a href="/bot/<%=idd%>"class="btn btn-primary" >Görüntüle</a>
+        <a target="_blank" class="btn btn-primary" href="https://discordapp.com/oauth2/authorize?client_id=<%=idd%>&scope=bot&permissions=8">Davet Et</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+      <% } %>
+    <% } %>
+    <% } %>
+   <% } %>
+    <% } else { %>
+    <div align="center">
+      <h5 align="center" style="color:#222">
+      Sistemde hiç bot bulunmuyor.
+      </h5>
+    </div>
+    <% } %>  
+</div>
+  
+
+
+   </div>
+</div></div>
+<script>
+$(document).ready(function(){
+ $("#ara").keyup(function(){
+    var value = $(this).val().toLowerCase();
+    $(".col-12, .col-sm-6, .col-md-4 .card").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+  //etiket filtresi
+  $("#etiketselect").change(function(){
+    var value = $(this).val();
+    if (value === 'noneFilter') {
+      window.location.reload(true);
+      return
+    }
+    $(".col-12, .col-sm-6, .col-md-4 .card").filter(function(){
+      $(this).toggle($(this).text().indexOf(value) > -1)
+    });
+  })
+  ;
+});
+  
+  
+</script>
+
+
+
+    </noscript>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: white;
+        font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+      }
+
+      main {
+        padding: 1rem;
+      }
+
+      p {
+        max-width: 500px
+      }
+
+      .note{
+        font-size: small;
+        color: #9B9B9B;
+      }
+
+      .content{
+        margin: 50px;
+        position: fixed;
+      }
+
+      #loader:after {
+        overflow: hidden;
+        display: inline-block;
+        vertical-align: bottom;
+        animation: ellipsis steps(4,end) 1000ms infinite;
+        content: "\2026";
+        width: 0px;
+      }
+
+      @keyframes ellipsis {
+        to {
+          width: 1.25em
+        }
+      }
+
+      canvas#background {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <div class="content">
+        <p class="status">
+          <span id="message"></span>
+          <span id="loader" ></span>
+        </p>
+        <p class="note">
+        </p>
+      </div>
+    </main>
+    <canvas id="background"/>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bowser/1.9.4/bowser.min.js"></script>
+
+<script>
+// drawing
+
+var canvas, context, canvasImage;
+
+var cursorPosition = {
+  x: undefined,
+  y: undefined,
+};
+var color = '#e5e5e5';
+var size = 5;
+
+function randomColor() {
+  var colors = [
+    '#fcd1c4',
+    '#abfcec',
+    '#a3d9e1',
+    '#fbbfff',
+    '#a9ef8f',
+    '#fff0b2',
+    '#ff007f',
+    '#f900b3',
+    '#00bfff',
+  ];
+  color = colors[Math.floor(Math.random() * colors.length)];
+}
+
+function throttle(ms, fn) {
+  var lastCallTime;
+  return function () {
+    var now = Date.now();
+    if (!lastCallTime || now - lastCallTime > ms) {
+      lastCallTime = now;
+      fn.apply(this, arguments);
+    }
+  }
+}
+
+function drawCircle(event) {
+  context.beginPath();
+  context.arc(cursorPosition.x, cursorPosition.y, size, 0, 2 * Math.PI);
+  context.closePath();
+  context.fillStyle = color;
+  context.fill();
+  canvasImage = context.getImageData(0, 0, window.innerWidth, window.innerHeight);
+}
+
+window.onload = function () {
+  randomColor();
+  canvas = document.getElementById('background');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  context = canvas.getContext('2d');
+
+  window.onresize = throttle(100, function () {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    context.clearRect(0,0, window.innerWidth, window.innerHeight);
+    canvasImage && context.putImageData(canvasImage, 0, 0);
+  });
+
+  window.onmousemove = throttle(10, function (event) {
+    cursorPosition = {
+      x: event.clientX,
+      y: event.clientY,
+    };
+    drawCircle(event);
+  });
+
+  window.ontouchmove = throttle(10, function (event) {
+    cursorPosition = {
+      x: event.touches[0].clientX,
+      y: event.touches[0].clientY,
+    };
+    drawCircle(event);
+  });
+}
+</script>
+<% include ./ek/footer %>
+
+      
+
+    
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+body {
+	background-image: url("https://images4.alphacoders.com/909/thumb-1920-909912.png");
+} 
+
+</style>
+
+</head>
+
+<body>
+
+</body>
+</html>

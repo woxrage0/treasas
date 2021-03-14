@@ -1,0 +1,237 @@
+<%- include('ek/header', {bot, user, path}) %>
+<script type="text/javascript">
+var title = "Discord Bot - Profil Ayarla";
+document.title = title;
+</script>
+<div class="container">
+  <form method="POST">
+  <div align="center" class="jumbotron" style="color:#333">
+
+       <img src="https://cdn.discordapp.com/avatars/<%=user.id%>/<%=user.avatar%>.png?size=512" class="rounded-circle panell">
+       <h3 style="color:#fff"><%=user.username%>#<%=user.discriminator%></h3>
+       <h5 style="color:#fff">Profil Ayarlama</h5>
+
+    <label><i aria-hidden="true"></i><h5 style="color:#fff">İsminiz: <a style="color:red">*</a></label>
+    <input type="text"name="isim" id="isim" required="required">
+    <br>
+
+    <label><i aria-hidden="true"></i>Yaşınız: </label>
+    <input type="text"name="yas" id="yas">
+    <br>
+
+    <label><i aria-hidden="true"></i>Biyografi:</label>
+    <input type="text" name="biyo" id="biyo" required="required">
+    <br>
+
+    <label><i aria-hidden="true"></i>Favori kodlama diliniz:</label>
+        <select id="favlib" name="favlib" required="required">
+            <option disabled selected>Favori kodlama dilinizi seçiniz.</option>
+            <option value="Yok">Yok</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Node.JS">Node.JS</option>
+            <option value="HTML">HTML</option>
+            <option value="Lua">Lua</option>
+            <option value="PHP">PHP</option>
+            <option value="Python">Python</option>
+            <opiton value="Java">Java</opiton>
+            <option value="C++">C++</option>
+            <option value="C#">C#</option>
+            <option value="Ruby">Ruby</option>
+        </select>
+    <br>
+
+    <label><i aria-hidden="true"></i>Bildiğiniz kodlama dilleri:</label>
+            <select id="libs" name="libs" required="required" multiple>
+                <option disabled selected>Bildiğiniz kodlama dillerini seçiniz.</option>
+                <option value="Yok">Yok</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Node.JS">Node.JS</option>
+                <option value="HTML">HTML</option>
+                <option value="Lua">Lua</option>
+                <option value="PHP">PHP</option>
+                <option value="Python">Python</option>
+                <opiton value="Java">Java</opiton>
+                <option value="C++">C++</option>
+                <option value="C#">C#</option>
+                <option value="Ruby">Ruby</option>
+    </select>
+      <p>
+            <a style="color:red">Not: </a><a style="color:lightgrey">birden çok etiket seçilebilir. Bilgisayarda iseniz <i>ctrl</i> tuşuna basılı tutarak seçiniz etiketleri.</a>
+            </p>
+
+    <h6 style="color:red">
+            Yanında * olanlar zorunlu, olmayanlar ise isteğe bağlıdır.
+          </h6>
+        <button type="submit" class="butonss"><i class="fa fa-save fa-fw"></i> Kaydet<i aria-hidden='true'></i></button>
+    </div>
+    </form>
+</div></div>
+<% include ./ek/footer %>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+body {
+	background-image: url("https://images4.alphacoders.com/909/thumb-1920-909912.png");
+} 
+
+</style>
+
+</head>
+
+<body>
+
+</body>
+</html>
+
+
+
+    </noscript>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: white;
+        font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+      }
+
+      main {
+        padding: 1rem;
+      }
+
+      p {
+        max-width: 500px
+      }
+
+      .note{
+        font-size: small;
+        color: #9B9B9B;
+      }
+
+      .content{
+        margin: 50px;
+        position: fixed;
+      }
+
+      #loader:after {
+        overflow: hidden;
+        display: inline-block;
+        vertical-align: bottom;
+        animation: ellipsis steps(4,end) 1000ms infinite;
+        content: "\2026";
+        width: 0px;
+      }
+
+      @keyframes ellipsis {
+        to {
+          width: 1.25em
+        }
+      }
+
+      canvas#background {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <div class="content">
+        <p class="status">
+          <span id="message"></span>
+          <span id="loader" ></span>
+        </p>
+        <p class="note">
+        </p>
+      </div>
+    </main>
+    <canvas id="background"/>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bowser/1.9.4/bowser.min.js"></script>
+
+<script>
+// drawing
+
+var canvas, context, canvasImage;
+
+var cursorPosition = {
+  x: undefined,
+  y: undefined,
+};
+var color = '#e5e5e5';
+var size = 5;
+
+function randomColor() {
+  var colors = [
+    '#fcd1c4',
+    '#abfcec',
+    '#a3d9e1',
+    '#fbbfff',
+    '#a9ef8f',
+    '#fff0b2',
+    '#fff0b2',
+  ];
+  color = colors[Math.floor(Math.random() * colors.length)];
+}
+
+function throttle(ms, fn) {
+  var lastCallTime;
+  return function () {
+    var now = Date.now();
+    if (!lastCallTime || now - lastCallTime > ms) {
+      lastCallTime = now;
+      fn.apply(this, arguments);
+    }
+  }
+}
+
+function drawCircle(event) {
+  context.beginPath();
+  context.arc(cursorPosition.x, cursorPosition.y, size, 0, 2 * Math.PI);
+  context.closePath();
+  context.fillStyle = color;
+  context.fill();
+  canvasImage = context.getImageData(0, 0, window.innerWidth, window.innerHeight);
+}
+
+window.onload = function () {
+  randomColor();
+  canvas = document.getElementById('background');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  context = canvas.getContext('2d');
+
+  window.onresize = throttle(100, function () {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    context.clearRect(0,0, window.innerWidth, window.innerHeight);
+    canvasImage && context.putImageData(canvasImage, 0, 0);
+  });
+
+  window.onmousemove = throttle(10, function (event) {
+    cursorPosition = {
+      x: event.clientX,
+      y: event.clientY,
+    };
+    drawCircle(event);
+  });
+
+  window.ontouchmove = throttle(10, function (event) {
+    cursorPosition = {
+      x: event.touches[0].clientX,
+      y: event.touches[0].clientY,
+    };
+    drawCircle(event);
+  });
+}
+</script>

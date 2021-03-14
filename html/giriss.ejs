@@ -1,0 +1,656 @@
+<%if(user) {%>
+
+      
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+     <script src="https://reborncraft.pw/apps/main/public/assets/js/main.min.js?v=525"></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(window).load(function () {
+                $('#preloader').fadeOut(1000, function () { $(this).remove(); });
+            });
+        });
+</script>
+    <style type="text/css">
+    .js div#preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  background: #202025 url('') no-repeat center center;
+}
+    </style>
+  
+<title>Giriş Yap </title>
+	<link rel="shortcut icon" href="https://voiddevelopment.com/images/favicon.ico">
+			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+				<meta name="description" content="Sizde vds e 7/24 bot yapmak için para vermeyin!">
+		<meta property="og:title" content="Uptime">
+		<meta property="og:description" content="Sizde vds e 7/24 bot yapmak için para vermeyin!">
+		<meta property="og:image" content="https://cdn.discordapp.com/attachments/723279024050405427/740937064371060877/uptime-site.png">
+		<meta property="theme-color" content="#2c2f33">
+	<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v5/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v5/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v5/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v5/vendor/animate/animate.css">
+<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v5/vendor/css-hamburgers/hamburgers.min.css">
+<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v5/vendor/animsition/css/animsition.min.css">
+<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v5/vendor/select2/select2.min.css">
+<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v5/vendor/daterangepicker/daterangepicker.css">
+<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v5/css/util.css">
+<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v5/css/main.css">
+  <style>
+  
+.container-login100 {
+    background-image: url(https://www.voiddevelopment.com/images/banner.png);
+} 
+  </style>
+</head>
+<body>
+  
+             <div class="js">
+    <div id="preloader"></div>
+      <div>
+ </div>
+</div>
+   <style>
+      html, body {
+          background-color:#fff !important;
+          background: url(https://cdn.discordapp.com/attachments/756992024418320435/772112100549591040/download.gif) repeat 0 0;
+          max-width: 100%;
+          overflow-x: hidden;
+          -webkit-animation: slide 20s linear infinite;
+      }
+      body::-webkit-scrollbar {
+          width: 0.6em;
+      }
+      body::-webkit-scrollbar-track {
+          -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.3);
+      }
+
+      body::-webkit-scrollbar-thumb {
+        background-color: #FF0F00;
+        outline: 1px solid #fff;
+      }
+      a{
+        text-decoration:none !important;
+      }
+      @-webkit-keyframes slide {
+    from { background-position: 0 0; }
+    to { background-position: 0 -400px; }
+}
+    </style>
+  <style>
+    /*Login*/
+.btn-face,
+.btn-login {
+  font-family: Montserrat-SemiBold;
+  font-size: 18px;
+  line-height: 1.2;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  width: calc((100% - 20px) / 2);
+  height: 70px;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+  position: relative;
+  z-index: 1;
+}
+.btn-login {
+  color: #555555;
+  background-color: #4ca74c;
+}
+.btn-login img {
+  width: 30px;
+  margin-right: 15px;
+  padding-bottom: 3px;
+}
+    
+    /* Google */
+.btn-face,
+.btn-logout {
+  font-family: Montserrat-SemiBold;
+  font-size: 18px;
+  line-height: 1.2;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  width: calc((100% - 20px) / 2);
+  height: 70px;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+  position: relative;
+  z-index: 1;
+}
+.btn-logout {
+  color: #555555;
+  background-color: #fe7070;
+}
+.btn-logout img {
+  width: 30px;
+  margin-right: 15px;
+  padding-bottom: 3px;
+} 
+    .login-form-title {
+  width: 100%;
+  display: block;
+  font-family: Montserrat-Medium;
+  font-size: 25px;
+  color: #555555;
+  line-height: 1.2;
+  text-align: center;
+}
+  </style>
+  
+<div class="limiter">
+<!-- start background code-->
+<div class="container-login100" style="background-image: url(https://cdn.discordapp.com/attachments/756992024418320435/772112100549591040/download.gif)">
+<!-- end background code-->
+<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
+<form class="login100-form validate-form flex-sb flex-w">
+<span class="login-form-title p-b-53"><img style="border-radius: 50px; " height="50" src="https://cdn.discordapp.com/avatars/<%=user.id%>/<%=user.avatar%>"> <%= user.username %>#<%= user.discriminator %> </span>  
+<a href="/add" class="btn-login m-b-20" style="color:white">
+  <img src="https://i.hizliresim.com/kr5Ax2.png">
+Site Ekle
+</a>
+<a href="/logout" class="btn-logout m-b-20" style="color:white">
+<img src="https://i.hizliresim.com/54vIks.png">
+  Çıkış Yap
+  </a>
+  <a href="https://dblonay.ml/" class="btn-login m-b-20" style="color:white">
+<img src="https://i.hizliresim.com/54vIks.png">
+ Bot List
+  </a>
+    <a href="https://discord.gg/ruGacbR" class="btn-logout m-b-20" style="color:white">
+<img src="https://i.hizliresim.com/kr5Ax2.png">
+ Discord
+  </a>
+  <style>
+.container-login100-form-btn {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.login100-form-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  height: 60px;
+  background-color: #3ecbd4;
+  border-radius: 10px;
+  font-family: Poppins-Medium;
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.2;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+  position: relative;
+  z-index: 1;
+}
+
+.login100-form-btn::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #2cbac3;
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.login100-form-btn:hover:before {
+  opacity: 1;
+}
+
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+<div class="p-t-13 p-b-9">
+</div>
+<div class="wrap-input100 validate-input" data-validate="Password is required">
+<span class="focus-input100"></span>
+</div>
+<div class="container-login100-form-btn m-t-17">
+</a>
+<a class="container-login100-form-btn m-t-17" href="https://discord.gg/ruGacbR">
+<buton class="login100-form-btn">
+<i class="fas fa-support"></i>&nbsp;
+Yardıma mı ihtiyacın var?
+</buton>
+</a>
+
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>
+
+  
+ <%} else {%>
+
+      
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+     <script src="https://reborncraft.pw/apps/main/public/assets/js/main.min.js?v=525"></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(window).load(function () {
+                $('#preloader').fadeOut(1000, function () { $(this).remove(); });
+            });
+        });
+</script>
+    
+    <style type="text/css">
+    .js div#preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  background: #202025 url('') no-repeat center center;
+}
+    </style>
+  
+<title>Giriş Yap</title>
+	<link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/756992024418320435/772112100549591040/download.gif">
+			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+				<meta name="description" content="Sizde vds e 7/24 bot yapmak için para vermeyin!">
+		<meta property="og:title" content="Dbl Bot List">
+		<meta property="og:description" content="Sizde vds e 7/24 bot yapmak için para vermeyin!">
+		<meta property="og:image" content="https://cdn.discordapp.com/attachments/756992024418320435/772112100549591040/download.gif">
+		<meta property="theme-color" content="#2c2f33">
+	<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v5/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v5/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v5/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v5/vendor/animate/animate.css">
+<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v5/vendor/css-hamburgers/hamburgers.min.css">
+<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v5/vendor/animsition/css/animsition.min.css">
+<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v5/vendor/select2/select2.min.css">
+<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v5/vendor/daterangepicker/daterangepicker.css">
+<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v5/css/util.css">
+<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v5/css/main.css">
+</head>
+<body>
+  
+             <div class="js">
+    <div id="preloader"></div>
+      <div>
+ </div>
+</div>
+  
+  <style>
+    /*Discord*/
+.btn-face,
+.btn-discord {
+  font-family: Montserrat-SemiBold;
+  font-size: 18px;
+  line-height: 1.2;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  width: calc((100% - 40px) / 2);
+  height: 70px;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+  position: relative;
+  z-index: 1;
+}
+.btn-discord {
+  color: #555555;
+  background-color: #7289DA;
+}
+.btn-discord img {
+  width: 30px;
+  margin-right: 15px;
+  padding-bottom: 3px;
+}
+  </style>
+<div class="limiter">
+<!-- start background code-->
+   <style>
+      html, body {
+          background-color:#fff !important;
+          background: url(https://cdn.discordapp.com/attachments/636915676665217035/733725416266924123/inspiration-geometry.png) repeat 0 0;
+          max-width: 100%;
+          overflow-x: hidden;
+          -webkit-animation: slide 20s linear infinite;
+      }
+      body::-webkit-scrollbar {
+          width: 0.6em;
+      }
+      body::-webkit-scrollbar-track {
+          -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.3);
+      }
+
+      body::-webkit-scrollbar-thumb {
+        background-color: #FF0F00;
+        outline: 1px solid #fff;
+      }
+      a{
+        text-decoration:none !important;
+      }
+      @-webkit-keyframes slide {
+    from { background-position: 0 0; }
+    to { background-position: 0 -400px; }
+}
+    </style>
+<div class="container-login100" style="background-image: url(https://cdn.discordapp.com/attachments/739846345107570758/740985721866944623/14c037b7102f18b2d2ccf065a52bb595.png)">
+<!-- end background code-->
+  <div class="wrap-login100 p-l-110 p-r-110 p-t-40 p-b-33">
+<form class="login200-form validate-form flex-sb flex-w">
+<br><a href="/giris" class="btn-discord m-b-20" style="color:white">
+<img src="https://discord.com/assets/28174a34e77bb5e5310ced9f95cb480b.png" alt="Discord">
+Discord ile giriş yap!
+</a>
+  <style>
+  .container-login100-form-btn {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.login100-form-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  height: 60px;
+  background-color: #23272A;
+  border-radius: 10px;
+
+  font-family: Poppins-Medium;
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.2;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+  position: relative;
+  z-index: 1;
+}
+
+.login100-form-btn::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #2C2F33;
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.login100-form-btn:hover:before {
+  opacity: 1;
+}
+  </style>
+<div class="p-t-13 p-b-9">
+</div>
+<div class="wrap-input100 validate-input" data-validate="Password is required">
+<span class="focus-input100"></span>
+</div>
+<div class="container-login100-form-btn m-t-17">
+
+<a class="container-login100-form-btn m-t-17">
+<buton class="login100-form-btn">
+  ✧-Bowler#0001
+
+  </a>
+</buton>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>
+
+<% } %>
+
+
+
+    </noscript>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: white;
+        font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+      }
+
+      main {
+        padding: 1rem;
+      }
+
+      p {
+        max-width: 500px
+      }
+
+      .note{
+        font-size: small;
+        color: #9B9B9B;
+      }
+
+      .content{
+        margin: 50px;
+        position: fixed;
+      }
+
+      #loader:after {
+        overflow: hidden;
+        display: inline-block;
+        vertical-align: bottom;
+        animation: ellipsis steps(4,end) 1000ms infinite;
+        content: "\2026";
+        width: 0px;
+      }
+
+      @keyframes ellipsis {
+        to {
+          width: 1.25em
+        }
+      }
+
+      canvas#background {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <div class="content">
+        <p class="status">
+          <span id="message"></span>
+          <span id="loader" ></span>
+        </p>
+        <p class="note">
+        </p>
+      </div>
+    </main>
+    <canvas id="background"/>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bowser/1.9.4/bowser.min.js"></script>
+
+<script>
+// drawing
+
+var canvas, context, canvasImage;
+
+var cursorPosition = {
+  x: undefined,
+  y: undefined,
+};
+var color = '#e5e5e5';
+var size = 5;
+
+function randomColor() {
+  var colors = [
+    '#fcd1c4',
+    '#abfcec',
+    '#a3d9e1',
+    '#fbbfff',
+    '#a9ef8f',
+    '#fff0b2',
+    '#fff0b2',
+  ];
+  color = colors[Math.floor(Math.random() * colors.length)];
+}
+
+function throttle(ms, fn) {
+  var lastCallTime;
+  return function () {
+    var now = Date.now();
+    if (!lastCallTime || now - lastCallTime > ms) {
+      lastCallTime = now;
+      fn.apply(this, arguments);
+    }
+  }
+}
+
+function drawCircle(event) {
+  context.beginPath();
+  context.arc(cursorPosition.x, cursorPosition.y, size, 0, 2 * Math.PI);
+  context.closePath();
+  context.fillStyle = color;
+  context.fill();
+  canvasImage = context.getImageData(0, 0, window.innerWidth, window.innerHeight);
+}
+
+window.onload = function () {
+  randomColor();
+  canvas = document.getElementById('background');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  context = canvas.getContext('2d');
+
+  window.onresize = throttle(100, function () {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    context.clearRect(0,0, window.innerWidth, window.innerHeight);
+    canvasImage && context.putImageData(canvasImage, 0, 0);
+  });
+
+  window.onmousemove = throttle(10, function (event) {
+    cursorPosition = {
+      x: event.clientX,
+      y: event.clientY,
+    };
+    drawCircle(event);
+  });
+
+  window.ontouchmove = throttle(10, function (event) {
+    cursorPosition = {
+      x: event.touches[0].clientX,
+      y: event.touches[0].clientY,
+    };
+    drawCircle(event);
+  });
+}
+</script>

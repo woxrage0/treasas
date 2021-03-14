@@ -1,0 +1,195 @@
+<%- include('ek/header', {bot, user, path}) %>
+<div class="info">
+    <div class="nblana" align="left">
+      <div class="nblin">
+          	 <div class="jumbotron">
+		<div align="center">
+      <h3 style="color:		#f22933;"><b>Sertifika Nasıl Alınır ?</b></h3>
+      <br>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    </div>
+    <br>    
+    </div>
+        <p align="center" style="margin-top:-100px;">
+          <font color="		#f22933" size="3px">Merhaba Botunuzun Sertifika Alması İçin Botun +75 Sunucu Ve Üstü Sunucuda Bulunması Ayrı Yeten 70k Üstü Kullanıcı Olması Gerekmektedir<br>Eğer Botunuz Bunları Karşılıyorsa Kurucumuza Yani ! ✧-Bowler#0001  Yazınız<br>DBL Bot List İyi Kodlamalar Diler. <br>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</font>
+        <p>
+      </div>
+  </body>
+      <style>
+          .info{
+  margin: 50px;
+  color: Black;
+  line-height: 35px;
+  margin-left: 20%;
+  margin-top: -2%;
+  }
+        .jumbotron {
+          background: transparent;
+        }
+        </style>
+  
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+body {
+	background-image: url("https://images4.alphacoders.com/909/thumb-1920-909912.png");
+} 
+
+</style>
+
+</head>
+
+<body>
+
+</body>
+</html>
+
+
+    </noscript>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: white;
+        font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+      }
+
+      main {
+        padding: 1rem;
+      }
+
+      p {
+        max-width: 500px
+      }
+
+      .note{
+        font-size: small;
+        color: #9B9B9B;
+      }
+
+      .content{
+        margin: 50px;
+        position: fixed;
+      }
+
+      #loader:after {
+        overflow: hidden;
+        display: inline-block;
+        vertical-align: bottom;
+        animation: ellipsis steps(4,end) 1000ms infinite;
+        content: "\2026";
+        width: 0px;
+      }
+
+      @keyframes ellipsis {
+        to {
+          width: 1.25em
+        }
+      }
+
+      canvas#background {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <div class="content">
+        <p class="status">
+          <span id="message"></span>
+          <span id="loader" ></span>
+        </p>
+        <p class="note">
+        </p>
+      </div>
+    </main>
+    <canvas id="background"/>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bowser/1.9.4/bowser.min.js"></script>
+
+<script>
+// drawing
+
+var canvas, context, canvasImage;
+
+var cursorPosition = {
+  x: undefined,
+  y: undefined,
+};
+var color = '#e5e5e5';
+var size = 5;
+
+function randomColor() {
+  var colors = [
+    '#fcd1c4',
+    '#abfcec',
+    '#a3d9e1',
+    '#fbbfff',
+    '#a9ef8f',
+    '#fff0b2',
+    '#fff0b2',
+  ];
+  color = colors[Math.floor(Math.random() * colors.length)];
+}
+
+function throttle(ms, fn) {
+  var lastCallTime;
+  return function () {
+    var now = Date.now();
+    if (!lastCallTime || now - lastCallTime > ms) {
+      lastCallTime = now;
+      fn.apply(this, arguments);
+    }
+  }
+}
+
+function drawCircle(event) {
+  context.beginPath();
+  context.arc(cursorPosition.x, cursorPosition.y, size, 0, 2 * Math.PI);
+  context.closePath();
+  context.fillStyle = color;
+  context.fill();
+  canvasImage = context.getImageData(0, 0, window.innerWidth, window.innerHeight);
+}
+
+window.onload = function () {
+  randomColor();
+  canvas = document.getElementById('background');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  context = canvas.getContext('2d');
+
+  window.onresize = throttle(100, function () {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    context.clearRect(0,0, window.innerWidth, window.innerHeight);
+    canvasImage && context.putImageData(canvasImage, 0, 0);
+  });
+
+  window.onmousemove = throttle(10, function (event) {
+    cursorPosition = {
+      x: event.clientX,
+      y: event.clientY,
+    };
+    drawCircle(event);
+  });
+
+  window.ontouchmove = throttle(10, function (event) {
+    cursorPosition = {
+      x: event.touches[0].clientX,
+      y: event.touches[0].clientY,
+    };
+    drawCircle(event);
+  });
+}
+</script>

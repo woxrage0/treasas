@@ -1,0 +1,259 @@
+---
+  0 debug pnpm:scope: 
+    selected: 1
+    workspacePrefix: null
+  1 info pnpm: 
+    message: "A store server is running. All store manipulations are delegated to it."
+    prefix: "/app"
+  2 debug pnpm:package-json: 
+    initial: 
+      //1: "describes your app and its dependencies"
+      //2: "https://docs.npmjs.com/files/package.json"
+      //3: "updating this file will download and update your packages"
+      name: "hello-express"
+      version: "0.0.1"
+      description: "Video site by mert."
+      main: "app.js"
+      scripts: 
+        start: "node index.js"
+      dependencies: 
+        express: "^4.16.4"
+        node-fetch: "^2.3.0"
+        url: "^0.11.0"
+        path: "^0.12.7"
+        body-parser: "^1.19.0"
+        ejs: "^2.6.1"
+        request: "^2.88.0"
+        passport: "^0.4.0"
+        passport-discord: "^0.1.3"
+        express-session: "^1.15.6"
+        level-session-store: "^2.1.0"
+        helms: "^1.2.0"
+        helmet: "^3.15.0"
+        marked: "^0.5.2"
+        bookman: "^2.0.1"
+        chalk: "^2.4.1"
+        cheerio: "^0.22.0"
+        discordbotlari-api: "^0.0.14"
+        fs: "^0.0.2"
+        highlight.js: "^9.13.1"
+        html-tags: "^2.0.0"
+        level-session: "^0.3.4"
+        moment: "^2.23.0"
+        moment-duration-format: "^2.2.2"
+        mongodb: "^3.1.10"
+        mongoose: "^5.3.16"
+        ms: "^2.1.1"
+        mysql: "^2.16.0"
+        node-superfetch: "^0.1.9"
+        useful-tools: "^0.0.33"
+        window: "^4.2.5"
+        parse-ms: "^2.1.0"
+        canvas-constructor: "^4.1.0"
+        generate-password: "^1.5.0"
+        quick.db: "^7.1.1"
+        canvas-node: "^0.3.20"
+        canvas: "^2.6.1"
+        javascript: "^1.0.0"
+        discord.js: "^11.5.0"
+      engines: 
+        node: "12.x"
+      repository: 
+        url: "https://glitch.com/edit/#!/hello-express"
+      license: "MIT"
+      keywords: 
+        - "node"
+        - "glitch"
+        - "express"
+      gitHead: "f92d2fa354d21e615d947132a838f0fa44a0cca2"
+      readme: "ERROR: No README data found!"
+      _id: "hello-express@0.0.1"
+    prefix: "/app"
+  3 debug pnpm:stage: 
+    prefix: "/app"
+    stage: "resolution_started"
+  4 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/node-fetch/2.6.1"
+    requester: "/app"
+    status: "resolved"
+  5 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/path/0.12.7"
+    requester: "/app"
+    status: "resolved"
+  6 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/url/0.11.0"
+    requester: "/app"
+    status: "resolved"
+  7 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/passport/0.4.1"
+    requester: "/app"
+    status: "resolved"
+  8 debug pnpm:deprecation: 
+    deprecated: "request has been deprecated, see https://github.com/request/request/issues/3142"
+    depth: 0
+    pkgId: "registry.npmjs.org/request/2.88.2"
+    pkgName: "request"
+    pkgVersion: "2.88.2"
+    prefix: "/app"
+  9 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/request/2.88.2"
+    requester: "/app"
+    status: "resolved"
+  10 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/level-session-store/2.2.0"
+    requester: "/app"
+    status: "resolved"
+  11 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/chalk/2.4.2"
+    requester: "/app"
+    status: "resolved"
+  12 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/cheerio/0.22.0"
+    requester: "/app"
+    status: "resolved"
+  13 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/html-tags/2.0.0"
+    requester: "/app"
+    status: "resolved"
+  14 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/marked/0.5.2"
+    requester: "/app"
+    status: "resolved"
+  15 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/fs/0.0.2"
+    requester: "/app"
+    status: "resolved"
+  16 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/bookman/2.0.1"
+    requester: "/app"
+    status: "resolved"
+  17 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/moment-duration-format/2.3.2"
+    requester: "/app"
+    status: "resolved"
+  18 debug pnpm:deprecation: 
+    deprecated: "no longer maintained"
+    depth: 0
+    pkgId: "registry.npmjs.org/level-session/0.3.4"
+    pkgName: "level-session"
+    pkgVersion: "0.3.4"
+    prefix: "/app"
+  19 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/level-session/0.3.4"
+    requester: "/app"
+    status: "resolved"
+  20 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/body-parser/1.19.0"
+    requester: "/app"
+    status: "resolved"
+  21 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/passport-discord/0.1.4"
+    requester: "/app"
+    status: "resolved"
+  22 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/helmet/3.23.3"
+    requester: "/app"
+    status: "resolved"
+  23 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/express-session/1.17.1"
+    requester: "/app"
+    status: "resolved"
+  24 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/express/4.17.1"
+    requester: "/app"
+    status: "resolved"
+  25 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/moment/2.29.1"
+    requester: "/app"
+    status: "resolved"
+  26 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/helms/1.2.0"
+    requester: "/app"
+    status: "resolved"
+  27 debug pnpm:deprecation: 
+    deprecated: "Support has ended for 9.x series. Upgrade to @latest"
+    depth: 0
+    pkgId: "registry.npmjs.org/highlight.js/9.18.5"
+    pkgName: "highlight.js"
+    pkgVersion: "9.18.5"
+    prefix: "/app"
+  28 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/highlight.js/9.18.5"
+    requester: "/app"
+    status: "resolved"
+  29 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/useful-tools/0.0.33"
+    requester: "/app"
+    status: "resolved"
+  30 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/node-superfetch/0.1.11"
+    requester: "/app"
+    status: "resolved"
+  31 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/window/4.2.7"
+    requester: "/app"
+    status: "resolved"
+  32 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/parse-ms/2.1.0"
+    requester: "/app"
+    status: "resolved"
+  33 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/canvas-constructor/4.1.0"
+    requester: "/app"
+    status: "resolved"
+  34 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/canvas-node/0.3.23"
+    requester: "/app"
+    status: "resolved"
+  35 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/mongodb/3.6.4"
+    requester: "/app"
+    status: "resolved"
+  36 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/ms/2.1.3"
+    requester: "/app"
+    status: "resolved"
+  37 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/mysql/2.18.1"
+    requester: "/app"
+    status: "resolved"
+  38 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/discord.js/11.6.4"
+    requester: "/app"
+    status: "resolved"
+  39 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/mongoose/5.11.15"
+    requester: "/app"
+    status: "resolved"
+  40 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/generate-password/1.6.0"
+    requester: "/app"
+    status: "resolved"
+  41 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/quick.db/7.1.3"
+    requester: "/app"
+    status: "resolved"
+  42 debug pnpm:deprecation: 
+    deprecated: "Package no longer supported. Contact support@npmjs.com for more info."
+    depth: 0
+    pkgId: "registry.npmjs.org/javascript/1.0.0"
+    pkgName: "javascript"
+    pkgVersion: "1.0.0"
+    prefix: "/app"
+  43 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/javascript/1.0.0"
+    requester: "/app"
+    status: "resolved"
+  44 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/canvas/2.6.1"
+    requester: "/app"
+    status: "resolved"
+  45 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/ejs/2.7.4"
+    requester: "/app"
+    status: "resolved"
+  46 error pnpm: "Cannot read property 'latest' of undefined"
+  47 debug pnpm:progress: 
+    packageId: "registry.npmjs.org/node-fetch/2.6.1"
+    requester: "/app"
+    status: "found_in_store"
